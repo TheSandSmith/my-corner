@@ -1,0 +1,19 @@
+---
+import '@styles/global.css';
+import BaseLayout from './BaseLayout.astro';
+import BoxedLayout from './BoxedLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout>
+  <BoxedLayout>
+    <Navbar />
+    <body>
+      <main>
+        <slot />
+      </main>
+    </body>
+    <Footer />
+  </BoxedLayout>
+</BaseLayout>

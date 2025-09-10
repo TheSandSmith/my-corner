@@ -1,0 +1,7 @@
+---
+const { text, class: extraClasses = '', ...props } = Astro.props;
+---
+
+<p class={`text-xs/5 md:text-sm/6 lg:text-md/6 ${extraClasses}`}>
+  {text ?? <slot />}
+</p>

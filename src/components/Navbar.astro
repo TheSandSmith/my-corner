@@ -1,0 +1,142 @@
+---
+import Initials from '@components/Initials.astro';
+import Label from './Headings/Label.astro';
+import { Icon } from 'astro-icon/components';
+
+const currentPath = Astro.url.pathname;
+
+const isHomeActive = currentPath === '/';
+const isAboutActive = currentPath === '/about';
+const isNowActive = currentPath === '/now';
+const isBlogActive = currentPath === '/blog';
+const isProjectsActive = currentPath === '/projects';
+const isContactActive = currentPath === '/contact';
+
+const isNowVisible = false;
+const isBlogVisible = false;
+const isProjectsVisible = true;
+
+const isActivelyLookingForWork = true;
+
+const resumeLink =
+  'https://drive.google.com/file/d/1r5a2rEMAUFQC-Y7Kkx_AULepaV2DxiA2/view?usp=sharing';
+---
+
+<header
+  id='navbar'
+  class='sticky top-0 z-50 mb-10 flex flex-col items-center justify-center transition-all duration-300 ease-out'
+>
+  <div class='flex w-full items-center justify-between gap-4'>
+    <Initials text='JB' size='5xl' class='font-bold' />
+    <nav aria-label='Main Navigation Menu' class='font-sans text-zinc-400'>
+      <ul class='flex gap-7'>
+        <li>
+          <a
+            href='/'
+            class={`${isHomeActive ? 'font-bold text-zinc-700' : 'hover:font-semi hover:text-zinc-500'}`}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href='/about'
+            class={`${isAboutActive ? 'font-bold text-zinc-700' : 'hover:font-semi hover:text-zinc-500'}`}
+          >
+            About
+          </a>
+        </li>
+        {
+          isNowVisible ? (
+            <li>
+              <a
+                href='/now'
+                class={`decoration-3 underline-offset-5 transition ${isNowActive ? 'font-bold text-zinc-700' : 'hover:font-semi hover:text-zinc-500'}`}
+              >
+                Now
+              </a>
+            </li>
+          ) : null
+        }
+        {
+          isBlogVisible ? (
+            <li>
+              <a
+                href='/blog'
+                class={`decoration-3 underline-offset-5 transition ${isBlogActive ? 'font-bold text-zinc-700' : 'hover:font-semi hover:text-zinc-500'}`}
+              >
+                Blog
+              </a>
+            </li>
+          ) : null
+        }
+        {
+          isProjectsVisible ? (
+            <li>
+              <a
+                href='/projects'
+                class={`decoration-3 underline-offset-5 transition ${isProjectsActive ? 'font-bold text-zinc-700' : 'hover:font-semi hover:text-zinc-500'}`}
+              >
+                Projects
+              </a>
+            </li>
+          ) : null
+        }
+        <li>
+          <a
+            href='/contact'
+            class={`${isContactActive ? 'font-bold text-zinc-700' : 'hover:font-semi hover:text-zinc-500'}`}
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  {
+    isActivelyLookingForWork ? (
+      <div class='mt-2 mb-4 flex w-full flex-col items-end'>
+        <div class='flex w-full items-center justify-end'>
+          <div class='relative flex h-2 w-2 items-center'>
+            <div class='absolute inset-0 animate-ping bg-emerald-500 opacity-75' />
+            <div class='relative h-2 w-2 bg-emerald-500' />
+          </div>
+          <span class='ml-2 text-sm'>available for hire</span>
+          <a
+            href={resumeLink}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='flex cursor-pointer items-center hover:text-zinc-500'
+          >
+            <Icon
+              name='heroicons:document-arrow-down'
+              size='1.2rem'
+              class='pointer-none ml-2'
+            />
+            <Label size='lg'>Download resume </Label>
+          </a>
+        </div>
+        <div class='flex w-full items-center justify-end text-zinc-400'>
+          <Icon
+            name='heroicons:check-circle'
+            size='1.2rem'
+            width='1.5px'
+            class='ml-2'
+          />
+          <Label size='lg' class='ml-0.5'>
+            Employment
+          </Label>
+          <Icon
+            name='heroicons:check-circle'
+            size='1.2rem'
+            width='1.5px'
+            class='ml-2'
+          />
+          <Label size='lg' class='ml-0.5'>
+            Freelancing
+          </Label>
+        </div>
+      </div>
+    ) : null
+  }
+</header>

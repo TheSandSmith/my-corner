@@ -1,0 +1,28 @@
+---
+const {
+  text = 'JB',
+  size = 'xl',
+  class: extraClasses = '',
+  ...props
+} = Astro.props;
+
+// Dynamic class names aren't detected automatically by Tailwind.
+// This helps Tailwind generate all the expected classes.
+const sizeMap: Record<string, string> = {
+  xs: 'text-xs',
+  sm: 'text-sm',
+  md: 'text-md',
+  lg: 'text-lg',
+  xl: 'text-xl',
+  '2xl': 'text-2xl',
+  '3xl': 'text-3xl',
+  '4xl': 'text-4xl',
+  '5xl': 'text-5xl',
+};
+
+const sizeClass = sizeMap[size] ?? 'text-xl';
+---
+
+<p class={`${sizeClass} ${extraClasses}`}>
+  {text}
+</p>
