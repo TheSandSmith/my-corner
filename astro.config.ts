@@ -2,10 +2,10 @@
 import { defineConfig } from 'astro/config';
 
 /* ------------------------------ Integrations ------------------------------ */
-import svelte from '@astrojs/svelte';
-import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
+import svelte from '@astrojs/svelte';
+import mdx from '@astrojs/mdx';
 /* -------------------------------------------------------------------------- */
 
 import tailwindcss from '@tailwindcss/vite';
@@ -13,7 +13,17 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.joebashour.dev',
-  integrations: [svelte(), mdx(), sitemap(), icon()],
+  base: '/',
+  integrations: [
+    sitemap({
+      changefreq: 'monthly',
+      priority: 0.7,
+      lastmod: new Date(),
+    }),
+    icon(),
+    svelte(),
+    mdx(),
+  ],
 
   vite: {
     plugins: [tailwindcss()],
