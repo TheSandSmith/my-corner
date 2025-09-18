@@ -1,0 +1,24 @@
+---
+import H1 from '@components/Headings/H1.astro';
+import MainLayout from '@layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const { slug, lang } = Astro.params;
+
+const allArticles = await getCollection('blog');
+const article = allArticles.find(article => article.data.slug === slug && article.data.lang === lang);
+
+export async function getStaticPaths() {
+  const articles = await getCollection('blog');
+
+  return articles.map(article => ({
+    params: { slug: article.id, lang: article.data.lang },
+    props: { post: article },
+  }));
+}
+---
+
+<MainLayout>
+  <H1 text={article?.data.title} />
+  <article>{article?.body}</article>
+</MainLayout>
