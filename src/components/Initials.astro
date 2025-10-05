@@ -1,10 +1,5 @@
 ---
-const {
-  text = 'JB',
-  size = 'xl',
-  class: extraClasses = '',
-  ...props
-} = Astro.props;
+const { text = 'JB', size = 'xl', class: extraClasses = '', ...props } = Astro.props;
 
 // Dynamic class names aren't detected automatically by Tailwind.
 // This helps Tailwind generate all the expected classes.

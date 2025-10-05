@@ -2,8 +2,6 @@
 const { text = 'Heading 3', class: extraClasses = '', ...props } = Astro.props;
 ---
 
-<h3
-  class={`text-lg sm:text-xl md:text-2xl lg:text-3xl mb-1 font-semibold ${extraClasses}`}
->
+<h3 class={`text-lg sm:text-xl md:text-2xl lg:text-3xl mb-1 font-semibold ${extraClasses}`}>
   {text}
 </h3>
