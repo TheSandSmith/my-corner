@@ -3,8 +3,12 @@ import MainLayout from '@layouts/MainLayout.astro';
 
 import H1 from '@components/Headings/H1.astro';
 import H2 from '@components/Headings/H2.astro';
+import H4 from '@components/Headings/H4.astro';
 import P from '@components/Headings/P.astro';
 import { type Page, PageType } from 'src/types/types';
+import { Image } from 'astro:assets';
+import portrait from '@public/joe-bashour.jpg';
+import H3 from '@components/Headings/H3.astro';
 
 export const metadata: Page = {
   lang: 'en',
@@ -18,19 +22,32 @@ export const metadata: Page = {
 ---
 
 <MainLayout>
-  <section class='prose prose-zinc mb-15 max-w-none'>
-    <H1 text='Hello, World!' />
-    <P>
-      I'm Joe. Welcome to my corner of the Internet! I love to build innovative solutions for problems. I prefer digital
-      solutions, but sometimes physical solutions as well.<br /><br />Feel free to take a look around - my portfolio,
-      miniblog, and current projects all live here!
-    </P>
+  <section class='max-w-none'>
+    <div class='flex flex-col items-start justify-between gap-6 md:flex-row md:items-center'>
+      <div>
+        <H4 text='Hello, World!' />
+        <H1 text="I'm Joe Bashour 👋" />
+        Welcome to my corner of the Internet!
+        <P class='mt-4'>
+          I am a software engineer who enjoys finding solutions to various problems. My solutions are usually digital
+          software, but thanks to my recent 3D printing hobby, sometimes I get to even build physical solutions.
+          <br />
+          <br />
+          Feel free to take a look around—my portfolio, miniblog, and current projects all live here!
+        </P>
+      </div>
+      <Image src={portrait} alt='Joe Bashour' class='h-full w-56 rounded-2xl dark:border-yellow-700' loading='eager' />
+    </div>
   </section>
-  <section class='prose prose-zinc mb-15 max-w-none'>
-    <H2 text='A Second Heading' />
+  <section class='mt-15 max-w-none'>
+    <H4 text='Why this website?' />
     <P>
-      This is a second section to demonstrate spacing between sections. Notice how the spacing is larger than the
-      spacing between the heading and paragraph in the previous section.
+      Historically, people used to build entire autobiographies — big, heavy books filled with stories, lessons, and
+      maybe a few tall tales. I figured, why not have my own little digital autobiography? This website is my way of
+      sharing what I’m up to, what I’ve learned, and maybe even a few stories of my own (minus the papercuts).
+      <br />
+      <br />
+      Welcome to my corner—make yourself at home!
     </P>
   </section>
 </MainLayout>
