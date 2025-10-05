@@ -1,4 +1,8 @@
 ---
+import H1 from '@components/Headings/H1.astro';
+import H2 from '@components/Headings/H2.astro';
+import H4 from '@components/Headings/H4.astro';
+import P from '@components/Headings/P.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import { type Page, PageType } from 'src/types/types';
 
@@ -14,7 +18,71 @@ export const metadata: Page = {
 
 <MainLayout>
   <main>
-    <h1>About Me</h1>
-    <p>Welcome to the about page! Here you can learn more about me and my work.</p>
+    <H1 text='About Me' />
+    <section class='mt-8'>
+      <H4 text='Who I Am' />
+      <P>
+        I'm a computer scientist, by training; an innovative problem-solver by inspiration; and a lifelong learner by
+        habit. I am not into horoscopes, so I will say that I am an <a
+          href='https://www.16personalities.com/infj-personality'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='text-zinc-500 hover:underline'>INFJ-A</a
+        > personality type, if that means anything to you. So far, I have lived in 4 countries, and I am a PIP (Polyglot
+        in Progress) - I speak English and Arabic fluently, and I have an advanced grasp of French. I do understand a bit
+        of Spanish and Turkish as well. I hail from Montreal, Canada, but I am always open to new adventures!
+      </P>
+    </section>
+    <section class='mt-8'>
+      <H4 text='My Professional Background' />
+      <P>
+        With a B.Sc. in Computer Science (minor in entrepreneurship) from McGill University, I bring not only technical
+        expertise but also an innovative, product-focused mindset. To date, I have accumulated a little less than 3
+        years of professional software development experience. However, my work experience is not restricted to tech, I
+        have also an established background in communications, customer resolution, and data analysis. If there is one
+        thing I love: it would be automating workflows!
+      </P>
+    </section>
+    <section class='mt-8'>
+      <H4 text='My Technical Skills' />
+      <P>
+        My technical skills include languages such as Java, Python, PHP, JavaScript, and C/C++. I have also experienced
+        multiple web development frameworks and libraries, including React, Astro, Next.js, and Vue.js. On the backend,
+        I have worked with Node.js, Express, and various databases like MySQL, PostgreSQL, and MongoDB. Additionally, I
+        am familiar with cloud platforms such as AWS. Beyond coding, I have a solid understanding of software
+        development methodologies like Agile (Scrum and Kanban). I am also proficient in version control systems like
+        Git. My diverse skill set allows me to adapt to different project requirements and contribute effectively to
+        various teams.
+      </P>
+    </section>
+    <section class='mt-8'>
+      <H4 text='My General Skills' />
+      <P>
+        Apart from my technical skills, I am proficient in MS Office, and Google Workspace. I have experience with
+        project management tools like Jira and Notion. I am comfortable working in both Windows and Linux environments.
+        I can operate vector graphic design software such as Adobe Illustrator and Affinity Designer. I dabble a bit in
+        CAD moddelling software (I mainly use FreeCAD). OrcaSlicer is my slicer of choice for 3D printing. I also have
+        experience with design tools like Figma for creating user interfaces and prototypes.
+      </P>
+    </section>
+    <section class='mt-8'>
+      <H4 text='What I Enjoy' />
+      <P>
+        I have a handful of hobbies that keep me busy. I love 3D printing and tinkering with electronics, which allows
+        me to bring my digital creations into the physical world. I also enjoy reading, plane spotting, and exploring
+        new technologies. When I'm not coding or building, you can find me experimenting with new recipes in the
+        kitchen. I also enjoy volunteering and giving back to the community whenever I can. I help organize our youth
+        group at my local church, and I occasionally volunteer at a local volunteering community in my city.
+      </P>
+    </section>
+    <section class='mt-8'>
+      <H4 text='Want to Learn More?' />
+      <P>
+        If you're interested in learning more about my work or collaborating on a project, feel free to reach out! I'm
+        always open to new opportunities and discussions. You can find me on various platforms, or simply drop me an
+        email.
+      </P>
+    </section>
+    <P text='Contact Form coming soon!' class='mt-8 italic' />
   </main>
 </MainLayout>
