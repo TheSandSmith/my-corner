@@ -28,3 +28,134 @@ export function checkSlashPageExists(link: string): boolean {
 
   return fs.existsSync(filePath);
 }
+
+export const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export const SPAM_KEYWORD_SET = new Set([
+  // Pharmaceutical spam
+  'cialis',
+  'viagra',
+  'levitra',
+  'xanax',
+  'adderall',
+  'phentermine',
+  'tramadol',
+  'oxycontin',
+  'prescription',
+  'pharmacy',
+  'pills',
+  'medication',
+  'drugs',
+  'steroids',
+
+  // Gambling & Casino
+  'casino',
+  'poker',
+  'slots',
+  'blackjack',
+  'roulette',
+  'betting',
+  'gambling',
+  'jackpot',
+  'bettnow',
+  'winmoney',
+  'easymoney',
+  'getrich',
+  'makemoneyfast',
+
+  // Lottery & Sweepstakes
+  'lottery',
+  'sweepstakes',
+  'prize',
+  'winner',
+  'congratulations',
+  'youwon',
+  'claimnow',
+  'milliondollar',
+  'cashprize',
+  'freemoney',
+  'inheritance',
+  'beneficiary',
+
+  // Investment & Finance scams
+  'forex',
+  'cryptocurrency',
+  'bitcoin',
+  'investmentopportunity',
+  'guaranteedreturns',
+  'binaryoptions',
+  'tradingsystem',
+  'profitguaranteed',
+  'riskfree',
+
+  // Adult content
+  'adult',
+  'xxx',
+  'porn',
+  'sex',
+  'dating',
+  'hookup',
+  'singles',
+  'webcam',
+
+  // Marketing spam
+  'mlm',
+  'multilevelmarketing',
+  'workfromhome',
+  'businessopportunity',
+  'affiliate',
+  'referral',
+  'commission',
+  'passiveincome',
+  'residualincome',
+
+  // Credit & Loan spam
+  'creditrepair',
+  'debtconsolidation',
+  'loanapproval',
+  'badcreditok',
+  'refinance',
+  'mortgage',
+  'personalloan',
+  'paydayloan',
+
+  // Weight loss & health
+  'weightloss',
+  'dietpills',
+  'loseweightfast',
+  'bellyfat',
+  'supplement',
+  'miraclecure',
+  'antiaging',
+  'wrinklecream',
+
+  // Tech support scams
+  'virusdetected',
+  'computerinfected',
+  'microsoftsupport',
+  'techsupport',
+  'systemerror',
+  'securityalert',
+  'malwaredetected',
+
+  // General spam indicators
+  'actnow',
+  'limitedtime',
+  'urgent',
+  'expirestoday',
+  'dontdelay',
+  'noobligation',
+  'riskfreetrial',
+  'satisfactionguaranteed',
+  'moneyback',
+  'clickhere',
+  'visitnow',
+  'callnow',
+  'ordernow',
+  'buynow',
+  'freetrial',
+  'nocost',
+  'absolutelyfree',
+  'nofees',
+  'nostringsattached',
+]);

@@ -1,0 +1,26 @@
+---
+import Form from '@components/Form.svelte';
+
+import { type Page, PageType } from 'src/types/types';
+import MainLayout from '@layouts/MainLayout.astro';
+
+export const metadata: Page = {
+  lang: 'en',
+  slug: 'slashes',
+  excludeFromIndex: true,
+  lastmod: new Date('2025-09-16T12:00:00Z'),
+  type: PageType.SITE,
+  priority: 0.7,
+  slugTranslations: {},
+};
+---
+
+<MainLayout>
+  <body>
+    <main>
+      <section>
+        <Form client:load />
+      </section>
+    </main>
+  </body>
+</MainLayout>

@@ -10,11 +10,17 @@ tailwindStylesheet: './src/styles/global.css'
 plugins:
   - 'prettier-plugin-astro'
   - 'prettier-plugin-tailwindcss'
+  - 'prettier-plugin-svelte'
 overrides:
   - files: '*.astro'
     options:
       parser: 'astro'
       astroAllowShorthand: true
+      jsxSingleQuote: true
+  - files: '*.svelte'
+    options:
+      parser: 'svelte'
+      svelteAllowShorthand: true
       jsxSingleQuote: true
   - files: '*.json'
     options:

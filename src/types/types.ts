@@ -57,3 +57,25 @@ export type RouteEntry = {
   alternateVersions: Record<Locale, string> | {};
 };
 /* -------------------------- END OF SITEMAP TYPES -------------------------- */
+
+/* ------------------------------- FORM TYPES ------------------------------- */
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+  honeypot: string; // Hidden field for bot detection
+  timestamp: number;
+};
+
+export type SpamValidation = {
+  isPossibleSpam: boolean;
+  detectedReason?: string;
+  isHardBlock: boolean;
+};
+
+export type Errors = {
+  name?: string;
+  email?: string;
+  message?: string;
+};
+/* ---------------------------- END OF FORM TYPES --------------------------- */
